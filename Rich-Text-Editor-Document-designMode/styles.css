@@ -62,3 +62,9 @@ ol {
   border-color: #3e7086;
   color: #3e7086;
 }
+
+.enter_text_sign,
+.save_text_btn,
+.clear_text_btn {
+  margin: 0 auto;
+}
