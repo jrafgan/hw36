@@ -7,78 +7,62 @@
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="Rich-Text-Editor-Document-designMode/script.js">
-    <link rel="stylesheet" href="Rich-Text-Editor-Document-designMode/styles.css">
-    <link rel="stylesheet" href="Rich-Text-Editor-Document-designMode/reset.css">
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/trumbowyg.js"></script>
+    <link rel="stylesheet" href="css/trumbowyg.css">
     <script>
         $(function () {
-            var text;
-            var save = function () {
-                localStorage.setItem('userText', text);
-            };
-            $('textarea[name="text"]').change(function () {
-                text = $('textarea[name="text"]').val();
+            var textArea = $('#editor');
+            textArea.trumbowyg();
+            var textArr = [];
 
-                if (text != '') {
-                    $('input[type="submit"]').click(function (event) {
-                        event.preventDefault();
-                        save();
-                        $(window).keydown(function (evt) {
-                            var key = String.fromCharCode(evt.keyCode);
-                            //ctrl+s
-                            if (key.toLowerCase() === "s" && evt.ctrlKey) {
-                                evt.preventDefault(true);
-                                save();
-                            }
-                        });
-                    });
+            if (localStorage.getItem('userText') !== null) {
+                var oldText = JSON.parse(localStorage.getItem('userText'));
+                    textArea.text(oldText);
+                console.log(oldText);
+            }
+
+            var saveText = () => {
+                textArr.push(textArea.text());
+                localStorage.setItem('userText', JSON.stringify(textArr));
+            };
+
+            $('.save_btn').on('click', (e) => {
+                e.preventDefault();
+                if (textArea.text() !== '') {
+                    saveText();
+                    console.log(textArr);
                 }
             });
 
-            $('input[type="button"]').click(function (event) {
-                localStorage.setItem('userText', '');
+            $('.clear').on('click', (e) => {
+                e.preventDefault();
+                localStorage.clear();
+                textArea.text('');
             });
-            var storage = localStorage.getItem('userText');
-            $('textarea[name="text"]').val(storage);
+
+            var isCtrl = false;
+            document.onkeyup=function(e){
+                if(e.keyCode == 17) isCtrl=false;
+            };
+
+            document.onkeydown=function(e){
+                if(e.keyCode == 17) isCtrl=true;
+                if(e.keyCode == 83 && isCtrl == true) {
+                    saveText();
+                    return false;
+                }
+            }
         });
     </script>
 </head>
 <body>
-<form>
-    <p><b>Введите ваши записи:</b></p>
-    <p><textarea cols="100" rows="30" name="text"></textarea></p>
-    <p><input type="submit" value="Coхранить"></p>
-    <p><input type="button" value="Очистить"></p>
-
-</form>
-<br><br><br>
-<div id="editor" contenteditable="false">
-
-    <section id="toolbar">
-
-        <div id="bold" class="icon fas fa-bold"></div>
-        <div id="italic" class="icon fas fa-italic"></div>
-        <div id="underline" class="icon fas fa-underline"></div>
-        <div id="strikeThrough" class="icon fas fa-strikethrough"></div>
-        <div id="createLink" class="icon fas fa-link"></div>
-        <div id="insertUnorderedList" class="icon fas fa-list-ul"></div>
-        <div id="insertOrderedList" class="icon fas fa-list-ol"></div>
-        <div id="justifyLeft" class="icon fas fa-align-left"></div>
-        <div id="justifyRight" class="icon fas fa-align-right"></div>
-        <div id="justifyCenter" class="icon fas fa-align-center"></div>
-        <div id="justifyFull" class="icon fas fa-align-justify"></div>
-
-    </section>
-
-    <section id="page" contenteditable="true">
-
-        <p id="page-content"></p>
-
-    </section>
-
+<div class="main">
+    <p>Запишите свои текст</p>
+    <div id="editor"></div>
+    <button class="save_btn">Save</button>
+    <button class="clear">Clear Local Storage</button>
 </div>
+
 </body>
 </html>
