@@ -3,217 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <title>hw36task1</title>
     <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
+    <link href="css/1hw36.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="css/flexslider.css" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <script src="js/jquery.flexslider.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/style3.css"/>
+    <script src="js/modernizr.custom.63321.js"></script>
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
 
-    <script>
-        $(function () {
-            $('.flexslider').flexslider();
+    <!-- Modernizr -->
+    <script src="js/modernizr.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/responsive-tabs.css"/>
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
 
-        });
-    </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Курсы Вождения</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Главная<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ссылка 1</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Выпадающее меню
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Ссылка А</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ссылка Б</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Ссылка В</a>
+<div class="grid-container">
+    <div class="header">
+        <div class="logo"><img src="images/logo.png" alt="logo" class="h1" /></div>
+        <div class="menu">
+            <div class="fleft">
+                <select id="cd-dropdown" class="cd-select">
+                    <option value="-1" selected>Choose a weather condition</option>
+                    <option value="1" class="icon-sun">Sun</option>
+                    <option value="2" class="icon-cloudy">Clouds</option>
+                    <option value="3" class="icon-weather">Snow</option>
+                    <option value="4" class="icon-rainy">Rain</option>
+                    <option value="5" class="icon-windy">Windy</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="body_container">
+        <div class="left_side_bar"><h3>Left Side Bar</h3></div>
+        <div class="main_bar"><p>Main Bar</p></div>
+        <div class="empty">
+            <div class="col-md-6">
+                <p class="main_p">Автошкола "Профи-Класс" - краткая информация:</p>
+                <ul class="ul-text">
+                    <li>категория «В» – 5000 сом, срок обучения 2,5 месяца</li>
+                    <li>занятия проводятся 3 раза в неделю (ПН-СР-ПТ или ВТ-ЧТ-СБ)</li>
+                    <li>утренние группы с 9:00 – 11:00; вечерние с 17:00 – 19:00</li>
+                    <li>группы с русским или кыргызским языком обучения</li>
+                    <li>компьютерное тестирование (как в РЭО ГАИ)</li>
+                    <li>набор идет постоянно, новые группы каждую неделю</li>
+                </ul>
+            </div>
+        </div>
+        <div class="main_bar2">
+            <div class="flexslider carousel">
+                <ul class="slides">
+                    <li>
+                        <img src="images/sl1.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl2.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl3.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl4.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl5.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl6.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl7.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl8.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl9.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl10.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl11.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl12.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl13.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl14.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl15.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl16.jpg"/>
+                    </li>
+                    <li>
+                        <img src="images/sl17.jpg"/>
+                    </li>
+                    <!-- items mirrored twice, total of 12 -->
+                </ul>
+            </div>
+            <div id="horizontalTab">
+                <ul>
+                    <li><a href="#tab-1">Responsive Tab-1</a></li>
+                    <li><a href="#tab-2">Responsive Tab-2</a></li>
+                    <li><a href="#tab-3">Responsive Tab-3</a></li>
+                    <li><a href="#tab-4">Responsive Tab-4</a></li>
+                    <li><a href="#tab-5">Responsive Tab-5</a></li>
+                </ul>
+
+                <div id="tab-1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu scelerisque eros. Fusce ante
+                        orci, hendrerit sit amet metus sit amet, venenatis sodales felis. Morbi vel mi in leo dignissim
+                        convallis in a neque. Suspendisse sollicitudin nibh non dapibus condimentum. Etiam sit amet arcu
+                        ultricies, porttitor justo eget, scelerisque urna. Praesent non ligula nec ligula euismod
+                        condimentum eget sed augue. Ut feugiat, turpis id sollicitudin vestibulum, tellus massa
+                        adipiscing nisl, quis cursus nisl arcu vel ipsum.</p>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ссылка 3</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск</button>
-        </form>
+                <div id="tab-2">
+                    <p>Quisque sodales sodales lacus pharetra bibendum. Etiam commodo non velit ac rhoncus. Mauris
+                        euismod purus sem, ac adipiscing quam laoreet et. Praesent vulputate ornare sem vel scelerisque.
+                        Ut dictum augue non erat lacinia, sed lobortis elit gravida. Proin ante massa, ornare accumsan
+                        ultricies et, posuere sit amet magna. Praesent dignissim, enim sed malesuada luctus, arcu sapien
+                        sodales sapien, ut placerat eros nunc vel est. Donec tristique mi turpis, et sodales nibh
+                        gravida eu. Etiam odio risus, porttitor non lacus id, rhoncus tempus tortor. Curabitur tincidunt
+                        molestie turpis, ut luctus nibh sollicitudin vel. Sed vel luctus nisi, at mattis metus. Aenean
+                        ultricies dolor est, a congue ante dapibus varius. Nulla at auctor nunc. Curabitur accumsan
+                        feugiat felis ut pretium. Praesent semper semper nisi, eu cursus augue.</p>
+                </div>
+                <div id="tab-3">
+                    <p>Mauris facilisis elit ut sem eleifend accumsan molestie sit amet dolor. Pellentesque dapibus arcu
+                        eu lorem laoreet, vitae cursus metus mattis. Nullam eget porta enim, eu rutrum magna. Duis quis
+                        tincidunt sem, sit amet faucibus magna. Integer commodo, turpis consequat fermentum egestas, leo
+                        odio posuere dui, elementum placerat eros erat id augue. Nullam at eros eget urna vestibulum
+                        malesuada vitae eu mauris. Aliquam interdum rhoncus velit, quis scelerisque leo viverra non.
+                        Suspendisse id feugiat dui. Nulla in aliquet leo. Proin vel magna sed est gravida rhoncus.
+                        Mauris lobortis condimentum nibh, vitae bibendum tortor vehicula ac. Curabitur posuere arcu
+                        eros.</p>
+                </div>
+                <div id="tab-4">
+                    <p>Donec egestas facilisis sapien sit amet euismod. Donec mollis lectus neque, in consectetur magna
+                        sodales et. Nam rutrum libero vitae magna sollicitudin aliquet. In tristique ultrices euismod.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        Suspendisse pretium congue sodales. Curabitur egestas, metus sed ultrices suscipit, metus nibh
+                        vehicula ligula, vel volutpat sapien nibh sed quam. Etiam elementum nisi eu risus congue, ut
+                        eleifend lectus ultricies. Vivamus in ligula fermentum, bibendum sapien eget, pretium est. Class
+                        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec ut
+                        ante non risus rutrum faucibus.</p>
+                </div>
+                <div id="tab-5">
+                    <p>Proin dignissim faucibus odio sollicitudin sagittis. Phasellus aliquet, erat vitae mollis
+                        consectetur, enim lectus ornare libero, et porta mi dui eu tellus. Morbi lobortis, elit at
+                        euismod porta, magna lacus mattis massa, a lacinia ligula risus et lectus. Sed et aliquam
+                        ligula. Nunc venenatis orci magna, quis facilisis sem porta non. Nunc sodales arcu in
+                        consectetur malesuada. Maecenas varius justo lacus, scelerisque viverra tellus luctus eu. Nam
+                        imperdiet ultricies suscipit. Ut urna mauris, eleifend quis lacinia non, mollis id libero.
+                        Praesent pharetra viverra ipsum at posuere. Quisque commodo tortor nec hendrerit faucibus. Fusce
+                        convallis urna et vehicula tincidunt. Duis sed vehicula justo, eu placerat nisi. Donec facilisis
+                        augue non turpis semper, eget condimentum mauris malesuada. Nunc in dignissim mi, sed laoreet
+                        felis.</p>
+                </div>
+            </div>
+        </div>
     </div>
-</nav>
-<div class="row">
-    <div class="flexslider col-md-6">
-        <ul class="slides">
-            <li>
-                <img src="images/sl1.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl2.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl6.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl3.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl4.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl5.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl7.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl8.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl9.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl10.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl11.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl12.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl14.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl15.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl16.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl17.jpg"/>
-            </li>
-            <li>
-                <img src="images/sl13.jpg"/>
-            </li>
-        </ul>
-    </div>
+    <div class="footer">
+        <div class="col1"><p>Not interested anymore? Click <a href="mailto:##LISTEMAIL##?subject=##REMOVETAG##">here</a> to unsubscribe.<br>&copy; 2015 Your Company, Your postal address.</p></div>
+        <div class="col2">Your Company Name
+            123 Your Street Address, Your City, State, Zip, Country
 
-    <div class="col-md-6">
-        <p class="main_p">Автошкола «Профи-Класс» — краткая информация:</p>
-        <ul>
-            <li>категория «В» – 5000 сом, срок обучения 2,5 месяца</li>
-            <li>занятия проводятся 3 раза в неделю (ПН-СР-ПТ или ВТ-ЧТ-СБ)</li>
-            <li>утренние группы с 9:00 – 11:00; вечерние с 17:00 – 19:00</li>
-            <li>группы с русским или кыргызским языком обучения</li>
-            <li>компьютерное тестирование (как в РЭО ГАИ)</li>
-            <li>набор идет постоянно, новые группы каждую неделю</li>
-        </ul>
+            www.yourdomain.tld
+            youremail@yourdomain.tld</div>
+        <div class="col3">Not interested anymore? Click here (add a link to unsubscribe web form or an mailto: link) to unsubscribe or reply with "Remove" in the subject. (alternate: Reply with "Remove" in the subject to unsubscribe from future mailings (alternate: newsletters, messages, offers, ...))</div>
     </div>
 </div>
-
-<div class="col-md-9">
-    <div id="slickQuiz">
-        <h1 class="quizName" style="display: block;">Test Your Knowledge!!</h1>
-
-        <div class="quizArea">
-            <div class="quizHeader" style="display: block;"><p>Think you're smart enough to be on Jeopardy? Find out
-                with this super crazy knowledge quiz!</p>
-                <!-- where the quiz main copy goes -->
-
-                <a class="button startQuiz" href="SlickQuiz-master/index.html">Get
-                    Started!</a>
-            </div>
-        </div>
-    </div>
-</div>
-    <div id="question">
-    </div>
-
-    <footer class="footer-distributed">
-
-        <div class="footer-left">
-
-            <h3>Company<span>logo</span></h3>
-
-            <p class="footer-links">
-                <a href="#">Home</a>
-                ·
-                <a href="#">Blog</a>
-                ·
-                <a href="#">Pricing</a>
-                ·
-                <a href="#">About</a>
-                ·
-                <a href="#">Faq</a>
-                ·
-                <a href="#">Contact</a>
-            </p>
-
-            <p class="footer-company-name">Company Name &copy; 2015</p>
-        </div>
-
-        <div class="footer-center">
-
-            <div>
-                <i class="fa fa-map-marker"></i>
-                <p><span>21 Revolution Street</span> Paris, France</p>
-            </div>
-
-            <div>
-                <i class="fa fa-phone"></i>
-                <p>+1 555 123456</p>
-            </div>
-
-            <div>
-                <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@company.com</a></p>
-            </div>
-
-        </div>
-
-        <div class="footer-right">
-
-            <p class="footer-company-about">
-                <span>About the company</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-                vehicula sit amet.
-            </p>
-
-            <div class="footer-icons">
-
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
-
-            </div>
-
-        </div>
-    </footer>
 </body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.dropdown.js"></script>
+<script defer src="js/jquery.flexslider.js"></script>
+<script src="js/jquery.responsiveTabs.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    $(function () {
+
+        $('#cd-dropdown').dropdown({
+            gutter: 5,
+            delay: 40,
+            rotated: 'left'
+        });
+
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                animationLoop: true,
+                itemWidth: 210,
+                itemMargin: 5,
+                minItems: 2,
+                maxItems: 2
+            });
+        });
+        var $tabs = $('#horizontalTab');
+        $tabs.responsiveTabs({
+            rotate: false,
+            startCollapsed: 'accordion',
+            collapsible: 'accordion',
+            setHash: true,
+            disabled: [3, 4],
+            click: function (e, tab) {
+                $('.info').html('Tab <strong>' + tab.id + '</strong> clicked!');
+            },
+            activate: function (e, tab) {
+                $('.info').html('Tab <strong>' + tab.id + '</strong> activated!');
+            },
+            activateState: function (e, state) {
+                //console.log(state);
+                $('.info').html('Switched from <strong>' + state.oldState + '</strong> state to <strong>' + state.newState + '</strong> state!');
+            }
+        });
+    });
+
+</script>
 </html>
